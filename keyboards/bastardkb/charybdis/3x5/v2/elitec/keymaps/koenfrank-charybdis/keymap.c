@@ -29,6 +29,7 @@ enum charybdis_keymap_layers {
     LAYER_POINTER,
     LAYER_NUMERAL,
     LAYER_SYMBOLS,
+    LAYER_GAMES,
 };
 
 // Automatically enable sniping-mode on the pointer layer.
@@ -106,7 +107,7 @@ static uint16_t auto_pointer_layer_timer = 0;
 #define LAYOUT_LAYER_MEDIA                                                                    \
     XXXXXXX,RGB_RMOD, RGB_TOG, RGB_MOD, XXXXXXX, XXXXXXX,RGB_RMOD, RGB_TOG, RGB_MOD, XXXXXXX, \
     KC_MPRV, KC_VOLD, KC_MUTE, KC_VOLU, KC_MNXT, KC_MPRV, KC_VOLD, KC_MUTE, KC_VOLU, KC_MNXT, \
-    XXXXXXX, XXXXXXX, XXXXXXX, EE_CLR,  QK_BOOT, QK_BOOT, EE_CLR,  XXXXXXX, XXXXXXX, XXXXXXX, \
+    TG(LAYER_GAMES), XXXXXXX, XXXXXXX, EE_CLR,  QK_BOOT, QK_BOOT, EE_CLR,  XXXXXXX, XXXXXXX, XXXXXXX, \
                       _______, KC_MPLY, KC_MSTP, KC_MSTP, KC_MPLY
 
 /** \brief Mouse emulation and pointer functions. */
@@ -155,6 +156,15 @@ static uint16_t auto_pointer_layer_timer = 0;
     KC_DQUO,  KC_DLR, KC_PERC, KC_CIRC, KC_PLUS, ______________HOME_ROW_GACS_R______________, \
     KC_TILD, KC_EXLM,   KC_AT, KC_HASH, KC_PIPE, _______________DEAD_HALF_ROW_______________, \
                       KC_LPRN, KC_RPRN, KC_UNDS, _______, XXXXXXX
+
+/**
+ * \brief Games layer.
+ */
+#define LAYOUT_LAYER_GAME                                                                     \
+       KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    TG(LAYER_GAMES),    KC_U,    KC_I,    KC_O,    KC_P, \
+       KC_LSFT,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, \
+       KC_LCTL,    KC_A,    KC_S,    KC_D,    KC_F,    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_ESC, \
+                      KC_T, KC_SPC, KC_B, ENT_SYM, BSP_NUM
 
 /**
  * \brief Add Home Row mod to a layout.
@@ -213,6 +223,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_NUMERAL] = LAYOUT_wrapper(LAYOUT_LAYER_NUMERAL),
   [LAYER_POINTER] = LAYOUT_wrapper(LAYOUT_LAYER_POINTER),
   [LAYER_SYMBOLS] = LAYOUT_wrapper(LAYOUT_LAYER_SYMBOLS),
+  [LAYER_GAMES] = LAYOUT_wrapper(LAYOUT_LAYER_GAME),
 };
 // clang-format on
 
