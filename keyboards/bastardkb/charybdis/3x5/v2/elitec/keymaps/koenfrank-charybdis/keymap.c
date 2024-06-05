@@ -164,7 +164,7 @@ static uint16_t auto_pointer_layer_timer = 0;
        KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    TG(LAYER_GAMES),    KC_U,    KC_I,    KC_O,    KC_P, \
        KC_LSFT,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, \
        KC_LCTL,    KC_A,    KC_S,    KC_D,    KC_F,    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_ESC, \
-                      KC_T, KC_SPC, KC_B, ENT_SYM, BSP_NUM
+                      KC_T, KC_SPC, KC_B, KC_ESC, BSP_NUM
 
 /**
  * \brief Add Home Row mod to a layout.
